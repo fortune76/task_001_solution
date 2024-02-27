@@ -25,7 +25,7 @@ int main() {
       break;
     case 2:
       int num = 0;
-      if (scanf("%d", &num) == 1) {
+      if (scanf("%d", &num) == 1 && num > -1) {
         char res[15] = {'\0'};
         convert_digit(num, res);
         output_str(res);
