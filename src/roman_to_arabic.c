@@ -74,12 +74,6 @@ int data_validation(char *str) {
     return counter;
 }
 
-void exception_print() {
-    fprintf(stderr, "Puck you, Verter!");
-    exit(EXIT_FAILURE);
-}
-void output_digit(int res) { printf("%d", res); }
-
 void convert_digit(int num, char *res) {
     char *thousands = "M";
     char *hungreds = "CD";
@@ -163,3 +157,9 @@ int check_nulla(char *str) {
     }
     return res;
 }
+
+void exception_print() {
+    fprintf(stderr, "Puck you, Verter!");
+    exit(EXIT_FAILURE);
+}
+void output_digit(int res) { printf("%d", res); }
