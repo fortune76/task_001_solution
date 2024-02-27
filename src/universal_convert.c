@@ -22,18 +22,16 @@ int main() {
       } else {
         exception_print();
       }
-      return 0;
       break;
     case 2:
       int num = 0;
-      if (scanf("%d%c", &num, &ch) == 2 && (ch == '\n' || ch == ' ' || ch == EOF)) {
+      if (scanf("%d", &num) == 1) {
         char res[15] = {'\0'};
         convert_digit(num, res);
         output_str(res);
       } else {
         exception_print();
       }
-      return 0;
       break;
 
     default:
