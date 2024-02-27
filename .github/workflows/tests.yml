@@ -17,12 +17,12 @@ jobs:
 
     - name: Compile roman_to_arabic
       run: |
-        gcc -Wall -Werror -Wextra -std=c11 -o ./src/roman_to_arabic ./src/roman_to_arabic.c
+        gcc -Wall -Werror -Wextra -std=c11 -lm -o ./src/roman_to_arabic ./src/roman_to_arabic.c
     
     - name: Compile universal_convert if exists
       if: ${{ hashFiles('./src/universal_convert.c') != '' }}
       run: |
-        gcc -Wall -Werror -Wextra -std=c11 -o ./src/universal_convert ./src/universal_convert.c
+        gcc -Wall -Werror -Wextra -std=c11 -lm -o ./src/universal_convert ./src/universal_convert.c
 
     - name: Install dependencies
       run: |
