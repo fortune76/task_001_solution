@@ -33,6 +33,7 @@ int main() {
       } else {
         exception_print();
       }
+      return 0;
       break;
 
     default:
