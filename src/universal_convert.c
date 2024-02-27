@@ -3,7 +3,7 @@
 int main() {
   int menu = 0;
   char ch;
-  if (scanf("%d%c", &menu, &ch) == 2 && (ch == '\n' || ch == ' ')) {
+  if (scanf("%d%c", &menu, &ch) == 2 && (ch == '\n' || ch == ' ' || ch == EOF)) {
     switch (menu) {
     case 1:
       char str[15];
@@ -26,7 +26,7 @@ int main() {
       break;
     case 2:
       int num = 0;
-      if (scanf("%d%c", &num, &ch) == 2 && (ch == '\n' || ch == ' ')) {
+      if (scanf("%d%c", &num, &ch) == 2 && (ch == '\n' || ch == ' ' || ch == EOF)) {
         char res[15] = {'\0'};
         convert_digit(num, res);
         output_str(res);
