@@ -103,8 +103,8 @@ void exception_print() {
   fprintf(stderr, "Puck you, Verter!");
   exit(EXIT_FAILURE);
 }
-void output_digit(int res) { fprintf(stdout, "%d", res); }
-void output_str(char *res) { fprintf(stdout, "%s", res); }
+void output_digit(int res) { printf("%d", res); }
+void output_str(char *res) { printf("%s", res); }
 
 void convert_digit(int num, char *res) {
   char *thousands = "M";
