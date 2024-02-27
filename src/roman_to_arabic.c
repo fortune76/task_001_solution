@@ -12,9 +12,11 @@ int main() {
     if (check_result(str, res)) {
       output_digit(num);
     } else {
+      return 1;
       exception_print();
     }
   } else {
+    return 1;
     exception_print();
   }
   return 0;
