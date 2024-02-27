@@ -72,57 +72,8 @@ int data_validation(char *str) {
   return counter;
 }
 
-// int roman_validation(char *str) {
-//   char *i_str = strstr(str, "IIII"), *v_str = strstr(str, "VV");
-//   char *x_str = strstr(str, "XXXX"), *l_str = strstr(str, "LL");
-//   char *c_str = strstr(str, "CCCC"), *d_str = strstr(str, "DD");
-//   int len = strlen(str), counter = 0;
-//   for (int i = 0; i < len; i++) {
-//     if (i_str || v_str || x_str || l_str || c_str || d_str) {
-//       counter++;
-//       break;
-//     } else if ((counter == 0 && i > 0 && str[i] == 'M' && str[i - 1] != 'C' &&
-//                 str[i - 1] != 'M') ||
-//                (i > 2 && str[i] == 'M' && strlen(strchr(str, 'C')) != (size_t)(len - i + 1))) {
-//       counter++;
-//       fprintf(stdout, "1");
-//     } else if ((counter == 0 && i > 0 && str[i] == 'D' && str[i - 1] != 'C' &&
-//                 str[i - 1] != 'M') ||
-//                (i > 2 && str[i] == 'D' && strlen(strchr(str, 'C')) != (size_t)(len - i + 1))) {
-//       counter++;
-//       fprintf(stdout, "2");
-//     } else if ((counter == 0 && i > 0 && str[i] == 'C' && str[i - 1] != 'X' &&
-//                 str[i - 1] != 'M' && str[i - 1] != 'D' && str[i - 1] != 'C') ||
-//                ((i > 2 && str[i] == 'C' && strlen(strchr(str, 'X')) != (size_t)(len - i + 1)))) {
-//       counter++;
-//       fprintf(stdout, "3");
-//     } else if ((counter == 0 && i > 0 && str[i] == 'L' && str[i - 1] != 'X' &&
-//                 str[i - 1] != 'M' && str[i - 1] != 'D' && str[i - 1] != 'C') ||
-//                (i > 2 && str[i] == 'L' && strlen(strchr(str, 'X')) != (size_t)(len - i + 1))) {
-//       counter++;
-//       fprintf(stdout, "4");
-//     } else if ((counter == 0 && i > 0 && str[i] == 'X' && str[i - 1] != 'I' &&
-//                 str[i - 1] != 'M' && str[i - 1] != 'D' && str[i - 1] != 'C' &&
-//                 str[i - 1] != 'L' && str[i - 1] != 'X') ||
-//                (i > 2 && str[i] == 'X' && strlen(strchr(str, 'I')) != (size_t)(len - i + 1))) {
-//       counter++;
-//       fprintf(stdout, "5");
-//     } else if ((counter == 0 && i > 0 && str[i] == 'V' && str[i - 1] != 'I' &&
-//                 str[i - 1] != 'M' && str[i - 1] != 'D' && str[i - 1] != 'C' &&
-//                 str[i - 1] != 'L' && str[i - 1] != 'X') ||
-//                (str[i - 2] == 'V' && str[i] == 'V')) {
-//       counter++;
-//       fprintf(stdout, "6");
-//     }
-//   }
-//   return counter;
-// }
-
 void exception_print() { fprintf(stderr, "Puck you, Verter!"); }
 void output_digit(int res) { fprintf(stdout, "%d", res); }
-
-// (i > 0 && str[i] == 'M' && str[i - 1] != 'M' &&
-//                 strlen(strchr(str, 'C')) != (size_t)i - 1 && str[i - 1] != 'C'))
 
 void convert_digit(int num, char *res) {
   char *thousands = "M";
