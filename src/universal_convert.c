@@ -17,11 +17,9 @@ int main() {
         if (check_result(str, res)) {
           output_digit(num);
         } else {
-          return 1;
           exception_print();
         }
       } else {
-        return 1;
         exception_print();
       }
       return 0;
@@ -33,18 +31,15 @@ int main() {
         convert_digit(num, res);
         output_str(res);
       } else {
-        return 1;
         exception_print();
       }
       break;
 
     default:
-      return 1;
       exception_print();
       break;
     }
   } else {
-    return 1;
     exception_print();
   }
   return 0;
@@ -104,7 +99,10 @@ int data_validation(char *str) {
   return counter;
 }
 
-void exception_print() { fprintf(stderr, "Puck you, Verter!"); }
+void exception_print() {
+  fprintf(stderr, "Puck you, Verter!");
+  exit(EXIT_FAILURE);
+}
 void output_digit(int res) { fprintf(stdout, "%d", res); }
 void output_str(char *res) { fprintf(stdout, "%s", res); }
 

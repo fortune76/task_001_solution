@@ -12,11 +12,9 @@ int main() {
     if (check_result(str, res)) {
       output_digit(num);
     } else {
-      return 1;
       exception_print();
     }
   } else {
-    return 1;
     exception_print();
   }
   return 0;
@@ -76,7 +74,10 @@ int data_validation(char *str) {
   return counter;
 }
 
-void exception_print() { fprintf(stderr, "Puck you, Verter!"); }
+void exception_print() {
+  fprintf(stderr, "Puck you, Verter!");
+  exit(EXIT_FAILURE);
+}
 void output_digit(int res) { fprintf(stdout, "%d", res); }
 
 void convert_digit(int num, char *res) {
@@ -86,12 +87,14 @@ void convert_digit(int num, char *res) {
   char *nums = "IV";
   int counter = 0;
   if (num == 0) {
-      strcat(res, "N");
-      return;
-    }
+    strcat(res, "N");
+    return;
+  }
   for (int i = 3; i > -1; i--) {
     int tmp = num / pow(10, i);
-    if (tmp == 0) { continue; }
+    if (tmp == 0) {
+      continue;
+    }
     if (i == 3) {
       for (int k = 0; k < tmp; k++) {
         strcat(res, thousands);
@@ -109,7 +112,7 @@ void convert_digit(int num, char *res) {
 }
 
 int convert_small_digits(char *str, int num, char *capacity,
-                           char *next_capacity, int position) {
+                         char *next_capacity, int position) {
   int counter = position;
   if (num >= 1 && num <= 3) {
     for (int k = 0; k < num; k++) {
@@ -156,7 +159,8 @@ int check_result(char *input_str, char *expected_str) {
 
 int check_nulla(char *str) {
   int res = 0;
-  if (strcmp(str, "nulla") == 0 || strcmp(str, "nihil") == 0 || strcmp(str, "N") == 0) {
+  if (strcmp(str, "nulla") == 0 || strcmp(str, "nihil") == 0 ||
+      strcmp(str, "N") == 0) {
     res++;
   }
   return res;

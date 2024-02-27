@@ -4,6 +4,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #define ALPHABET "NIVXLCDM"
 
 int convert_roman(char *str);
