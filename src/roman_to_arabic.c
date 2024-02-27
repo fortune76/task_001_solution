@@ -3,7 +3,9 @@
 int main() {
   char str[15];
   scanf("%s", str);
-  if (data_validation(str)) {
+  if (check_nulla(str)) {
+    output_digit(0);
+  } else if (data_validation(str)) {
     int num = convert_roman(str);
     char res[15] = {'\0'};
     convert_digit(num, res);
@@ -148,4 +150,12 @@ int check_result(char *input_str, char *expected_str) {
     result--;
   }
   return result;
+}
+
+int check_nulla(char *str) {
+  int res = 0;
+  if (strcmp(str, "nulla") == 0 || strcmp(str, "nihil") == 0 || strcmp(str, "N") == 0) {
+    res++;
+  }
+  return res;
 }

@@ -7,6 +7,7 @@
 #define ALPHABET "NIVXLCDM"
 
 int convert_roman(char *str);
+int check_nulla(char *str);
 void exception_print();
 void output_digit(int res);
 int data_validation(char *str);

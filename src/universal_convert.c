@@ -8,7 +8,9 @@ int main() {
     case 1:
       char str[15];
       scanf("%s", str);
-      if (data_validation(str)) {
+      if (check_nulla(str)) {
+        output_digit(0);
+      } else if (data_validation(str)) {
         int num = convert_roman(str);
         char res[15] = {'\0'};
         convert_digit(num, res);
@@ -108,12 +110,14 @@ void convert_digit(int num, char *res) {
   char *nums = "IV";
   int counter = 0;
   if (num == 0) {
-      strcat(res, "N");
-      return;
-    }
+    strcat(res, "N");
+    return;
+  }
   for (int i = 3; i > -1; i--) {
     int tmp = num / pow(10, i);
-    if (tmp == 0) { continue; }
+    if (tmp == 0) {
+      continue;
+    }
     if (i == 3) {
       for (int k = 0; k < tmp; k++) {
         strcat(res, thousands);
@@ -131,7 +135,7 @@ void convert_digit(int num, char *res) {
 }
 
 int convert_small_digits(char *str, int num, char *capacity,
-                           char *next_capacity, int position) {
+                         char *next_capacity, int position) {
   int counter = position;
   if (num >= 1 && num <= 3) {
     for (int k = 0; k < num; k++) {
@@ -174,4 +178,12 @@ int check_result(char *input_str, char *expected_str) {
     result--;
   }
   return result;
+}
+
+int check_nulla(char *str) {
+  int res = 0;
+  if (strcmp(str, "nulla") == 0 || strcmp(str, "nihil") == 0 || strcmp(str, "N") == 0) {
+    res++;
+  }
+  return res;
 }
