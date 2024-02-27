@@ -3,7 +3,7 @@
 int main() {
   int menu = 0;
   char ch;
-  if (scanf("%d%c", &menu, &ch) == 2 && ch == '\n') {
+  if (scanf("%d%c", &menu, &ch) == 2 && (ch == '\n' || ch == ' ')) {
     switch (menu) {
     case 1:
       char str[15];
